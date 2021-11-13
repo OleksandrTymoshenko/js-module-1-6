@@ -1919,3 +1919,380 @@ function makeTask(data) {
 
 // Решение
 
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+value = { completed, category, priority, ...data };
+  // Change code above this line
+  return value;
+}
+
+// Задача 31
+
+// Операция rest для сбора всех аргументов функции
+// Операция ... (rest) позволяет собрать группу независимых элементов в новую коллекцию. Синтаксически это близнец операции распыления, но отличить их просто - распыление это когда ... находится в правой части операции присваивания, а сбор это когда ... находится в её левой части.
+
+// Вернёмся к аналогии с яблоками. Если на полу лежат яблоки и у нас есть пустой ящик, то операция rest позволит «собрать» яблоки в ящик. При этом оригинальные яблоки останутся на полу, а в ящике будет копия каждого яблока.
+
+// Одна из областей применения операции rest это создание функций которые могут принимать произвольное количество аргументов.
+
+// // Как объявить параметры функции так,
+// // чтобы можно было передать любое кол-во аргументов?
+// function multiply() {
+//   // ...
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+// Если убрать весь «синтаксический шум» и посмотреть на аргументы и параметры функции, то аргументы находятся в правой части операции присваивания, а параметры в левой, потому что значения аргументов присваиваются объявленным параметрам. Значит можно «собрать» все аргументы функции в один параметр используя операцию rest.
+
+// function multiply(...args) {
+//   console.log(args); // массив всех аргументов
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+// Имя параметра может быть произвольным. Чаще всего его называют args, restArgs или otherArgs, сокращённое от arguments.
+
+// Задание
+// Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
+
+// Тесты
+// Объявлена функция add
+// Функция add использует параметр args
+// Для сбора аргументов в переменную args, в подписи функции используется синтаксис ... (оперетор rest)
+// Вызов add(15, 27) возвращает 42
+// Вызов add(12, 4, 11, 48) возвращает 75
+// Вызов add(32, 6, 13, 19, 8) возвращает 78
+// Вызов add(74, 11, 62, 46, 12, 36) возвращает 241
+
+// Change code below this line
+function add() {
+  // Change code above this line
+}
+
+// Решение
+
+// Change code below this line
+function add(...args) {
+  let total = 0;
+  for (let i = 0; i < args.length; i += 1) {
+    total += args[i];
+  }
+  return total;
+ }
+add(15, 27);
+add(12, 4, 11, 48);
+add(32, 6, 13, 19, 8);
+add(74, 11, 62, 46, 12, 36);
+
+// Задача 32
+
+// Операция rest для сбора части аргументов функции
+// Операция ... (rest) также позволяет собрать в массив только ту часть аргументов, которая необходима, объявив параметры до «сбора».
+
+// function multiply(firstNumber, secondNumber, ...otherArgs) {
+//   console.log(firstNumber); // Значение первого аргумента
+//   console.log(secondNumber); // Значение второго аргумента
+//   console.log(otherArgs); // Массив остальных аргументов
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+// Все аргументы, для которых будут объявлены параметры, передадут им свои значения, остальные аргументы будут помещены в массив. Операция rest собирает все оставшиеся аргументы и поэтому должна идти последней в подписи функции, иначе будет ошибка.
+
+// Задание
+// Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
+
+// Тесты
+// Объявлена функция addOverNum()
+// Вызов addOverNum(50, 15, 27) возвращает 0
+// Вызов addOverNum(10, 12, 4, 11, 48, 10, 8) возвращает 71
+// Вызов addOverNum(15, 32, 6, 13, 19, 8) возвращает 51
+// Вызов addOverNum(20, 74, 11, 62, 46, 12, 36) возвращает 218
+
+// Change code below this line
+function addOverNum(...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg;
+  }
+
+  return total;
+  // Change code above this line
+}
+
+// Решение
+
+// Change code below this line
+function addOverNum(...args) {
+  let total = 0;
+
+  for (let i = 0; i < args.length; i += 1) 
+  {
+    if (args [i] > args[0]){
+      
+    total += args[i]};
+  }
+
+  return total;
+  // Change code above this line
+}
+
+// Задача 33
+
+// Задача. Массив совпадений
+// Задание
+// Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+
+// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
+
+// Тесты
+// Объявлена функция findMatches()
+// Вызов findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) возвращает [1, 2]
+// Вызов findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) возвращает [17, 89, 2]
+// Вызов findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) возвращает [24, 9, 41]
+// Вызов findMatches([63, 11, 8, 29], 4, 7, 16) возвращает []
+
+// Change code below this line
+function findMatches() {
+  const matches = []; // Don't change this line
+
+  // Change code above this line
+  return matches;
+}
+
+// Решение
+
+// Change code below this line
+function findMatches(arr, ...args) {
+  const matches = []; // Don't change this line
+	for (const arg of args) {
+      if(arr.includes(arg)) {
+        matches.push(arg);
+        
+      }
+    }
+  // Change code above this line
+  return matches;
+}
+
+// Задача 34
+
+// Методы объекта
+// До сих пор мы рассматривали объекты только как хранилища взаимосвязанных данных, например информация о книге и т. п. Объекты-хранилища обычно находятся в массиве таких же объектов, который представляет коллекцию однотипных элементов.
+
+// Объекты могут хранить не только данные, но и функции для работы с этими данными - методы. Если значение свойства это функция, такое свойство называется методом объекта.
+
+// // ✅ Логиески и синтаксически сгруппированные сущности
+// const bookShelf = {
+//   books: ["Последнее королевство", "Страж снов"],
+//   // Это метод объекта
+//   getBooks() {
+//     console.log("Этот метод будет возвращать все книги - свойство books");
+//   },
+//   // Это метод объекта
+//   addBook(bookName) {
+//     console.log("Этот метод будет добавлять новую книгу в свойство books");
+//   },
+// };
+
+// // Вызовы методов
+// bookShelf.getBooks();
+// bookShelf.addBook("Новая книга");
+// Такие объекты можно назвать «моделями». Они связывают данные и методы для работы с этими данными. Например, можно было объявить переменную books и две функции getBooks() и addBook(bookName), но тогда это были бы три независимые сущности без явной синтаксической, и со слабой логической связями.
+
+// // ❌ Слабосвязанные, независмые сущности
+// const books = [];
+// function getBooks() {}
+// function addBook() {}
+// Задание
+// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+
+// Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку "Deleting book <имя книги>", где <имя книги> это значение параметра bookName.
+
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
+
+// Тесты
+// Объявлена переменная bookShelf
+
+// Значение переменной bookShelf это объект
+
+// Значение свойства bookShelf.getBooks это метод объекта
+
+// Вызов метода bookShelf.getBooks() возвращает строку "Возвращаем все книги"
+
+// Значение свойства bookShelf.addBook это метод объекта
+
+// Вызов метода bookShelf.addBook("Haze") возвращает строку "Adding book Haze"
+
+// Значение свойства bookShelf.removeBook это метод объекта
+
+// Вызов метода bookShelf.removeBook("Red sunset") возвращает строку "Deleting book Red sunset"
+
+// Значение свойства bookShelf.updateBook это метод объекта
+
+// Вызов метода bookShelf.updateBook("Sands of dune", "Dune") возвращает строку "Updating book Sands of dune to Dune"
+
+const bookShelf = {
+  // Change code below this line
+  books: ["The last kingdom", "The guardian of dreams"],
+  getBooks() {
+    return "Returning all books";
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  // Change code above this line
+};
+
+// Решение
+
+const bookShelf = {
+  // Change code below this line
+  books: ["The last kingdom", "The guardian of dreams"],
+  getBooks( ) {
+    return "Returning all books";
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  // Change code above this line
+},
+  
+}
+
+// Задача 35
+
+// Доступ к свойствам объекта в его методах
+// Методы используются для работы со свойствами объекта, их изменения. Для доступа к объекту в методе используется не имя переменной, например bookShelf, а ключевое слово this - контекст. Значением this будет объект перед «точкой», то есть объект который вызвал этот метод, в нашем случае это ссылка на объект bookShelf.
+
+// const bookShelf = {
+//   books: ["Последнее королевство"],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+
+// // Перед точкой стоит объект bookShelf,
+// // поэтому при вызове метода, this будет хранить ссылку на него.
+// bookShelf.getBooks(); // {books: ["Последнее королевство"], getBooks: f}
+// Для того, чтобы получить доступ к свойствам объекта в методах, мы обращаемся к нему через this и дальше как обычно - «через точку» к свойствам.
+
+// const bookShelf = {
+//   books: ["Последнее королевство"],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//   },
+// };
+
+// console.log(bookShelf.getBooks()); // []
+// bookShelf.addBook("Мгла");
+// bookShelf.addBook("Страж снов");
+// console.log(bookShelf.getBooks()); // ["Последнее королевство", "Мгла", "Страж снов"]
+// bookShelf.removeBook("Мгла");
+// console.log(bookShelf.getBooks()); // ["Последнее королевство", "Страж снов"]
+// Будет логично задуматься - почему бы не использовать при обращении к свойствам имя объекта, ведь мы явно не собираемся его менять. Дело в том, что имя объекта штука не надежная, методы одного объекта можно копировать в другой (с другим именем), а в будущем узнаем, что часто, при создании объекта мы заранее вовсе не знаем имени. Использование this гарантирует, что метод работает именно с тем объектом, который его вызвал.
+
+// Задание
+// Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент
+
+// Тесты
+// Объявлена переменная bookShelf
+
+// Значение переменной bookShelf это объект
+
+// Значение свойства bookShelf.updateBook это метод объекта
+
+// После вызова метода bookShelf.updateBook("Haze", "Dungeon chronicles"), значение свойства books это массив ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+
+// После вызова метода bookShelf.updateBook("The last kingdom", "Dune"), значение свойства books это массив ["Dune", "Haze", "The guardian of dreams"]
+
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+    // Change code above this line
+  },
+};
+
+// Решение
+
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+
+const bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
+
+    // Change code above this line
+  },
+};
+
+// Задача 36
+
+// Задача. Лавка зелий «У старой жабы»
+// Задание
+// К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
+
+// Тесты
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив []
+
+const atTheOldToad = {
+  // Change code below this line
+  // Change code above this line
+};
+
+// Решение
+
+const atTheOldToad = {
+potions : []
+
+};
+
+// Задача 37
+
+// Задача. Получаем все зелья
+// Задание
+// Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
+
+// Тесты
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.getPotions это метод объекта
+// Вызов метода atTheOldToad.getPotions() возвращает ["Speed potion", "Dragon breath", "Stone skin"]
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  // Change code below this line
+
+  // Change code above this line
+};
+
+// Решение
+
+
