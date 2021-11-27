@@ -2039,3 +2039,665 @@ const eachElementInThirdIsOdd = thirdArray;
 
 // Решение
 
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+const eachElementInFirstIsEven = firstArray.every(number => number % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every(number => number % 2 !== 0);
+const eachElementInSecondIsEven = secondArray.every(number => number % 2 === 0);
+const eachElementInSecondIsOdd = secondArray.every(number => number % 2 !== 0);
+const eachElementInThirdIsEven = thirdArray.every(number => number % 2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every(number => number % 2 !== 0);
+
+// Задача 30
+
+// Задача. Все ли пользователи активны
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+// Задание
+// Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false.
+// Тесты
+// Объявлена переменная isEveryUserActive
+// Переменной isEveryUserActive присвоена стрелочная функция с параметром (users)
+// Для перебора параметра users используется метод every()
+// Вызов функции с указанным массивом пользователей возвращает false
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+// Change code below this line
+
+const isEveryUserActive = (users) => {
+};
+// Change code above this line
+
+// Решение
+
+const isEveryUserActive = (users) => {
+  const getUserNames = users.every(user => user.isActive);
+  return getUserNames;
+};
+
+// Задача 32
+
+// Метод some()
+// Метод some(callback) проверяет проходит ли хотя бы один элемент массива тест предоставляемый коллбек-функцией. Возвращает true или false.
+// массив.some((element, index, array) => {
+// Callback function body
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает true если хотя бы один элемент массива удовлетворяет условию.
+// Возвращает false если ни один элемент массив не удовлетворяет условию.
+// Перебор массива прекращается если коллбек возвращает true.
+// Есть хотя бы один элемент больше либо равный нулю? - да
+// [1, 2, 3, 4, 5].some(value => value >= 0); // true
+// Есть хотя бы один элемент больше либо равный нулю? - да
+// [-7, -20, 3, -10, -14].some(value => value >= 0); // true
+// Есть хотя бы один элемент меньше нуля? - нет
+// [1, 2, 3, 4, 5].some(value => value < 0); // false
+// Есть хотя бы один элемент меньше нуля? - да
+// [1, 2, 3, -10, 4, 5].some(value => value < 0); // true
+// Задание
+// Используя метод some() дополни код так, чтобы:
+// В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+// В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+// В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+// В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+// В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+// В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
+// Тесты
+// Объявлена переменная firstArray
+// Значение переменной firstArray это массив [26, 94, 36, 18]
+// Объявлена переменная secondArray
+// Значение переменной secondArray это массив [17, 61, 23]
+// Объявлена переменная thirdArray
+// Значение переменной thirdArray это массив [17, 26, 94, 61, 36, 23, 18]
+// Объявлена переменная anyElementInFirstIsEven
+// Значение переменной anyElementInFirstIsEven это буль true
+// Объявлена переменная anyElementInFirstIsOdd
+// Значение переменной anyElementInFirstIsOdd это буль false
+// Объявлена переменная anyElementInSecondIsEven
+// Значение переменной anyElementInSecondIsEven это буль false
+// Объявлена переменная anyElementInSecondIsOdd
+// Значение переменной anyElementInSecondIsOdd это буль true
+// Объявлена переменная anyElementInThirdIsEven
+// Значение переменной anyElementInThirdIsEven это буль true
+// Объявлена переменная anyElementInThirdIsOdd
+// Значение переменной anyElementInThirdIsOdd это буль true
+// Для перебора массивов использован метод some()
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+const anyElementInFirstIsEven = firstArray;
+const anyElementInFirstIsOdd = firstArray;
+const anyElementInSecondIsEven = secondArray;
+const anyElementInSecondIsOdd = secondArray;
+const anyElementInThirdIsEven = thirdArray;
+const anyElementInThirdIsOdd = thirdArray;
+
+// Решение
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+const anyElementInFirstIsEven = firstArray.some(number => number % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(number => number % 2 !== 0);
+const anyElementInSecondIsEven = secondArray.some(number => number % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(number => number % 2 !== 0);
+const anyElementInThirdIsEven = thirdArray.some(number => number % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(number => number % 2 !== 0);
+
+// Задача 33
+
+// Задача. Есть ли активные пользователи
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+// Задание
+// Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
+// Тесты
+// Объявлена функция isAnyUserActive(users)
+// Для перебора параметра users используется метод some()
+// Вызов функции с указанным массивом пользователей возвращает true
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// Change code below this line
+const isAnyUserActive = users => {
+};
+// Change code above this line
+
+// Решение
+
+const isAnyUserActive = users => {
+const isAnyUserActive = users.some(user => user.isActive);
+  return isAnyUserActive;
+};
+
+// Задача 34
+
+// Метод reduce()
+// Метод reduce(callback, initialValue) используется для последовательной обработки каждого элемента массива с сохранением промежуточного результата, как аккумулятор. Немного сложнее других в усвоении, но результат стоит того.
+// массив.reduce((previousValue, element, index, array) => {
+// Тело коллбек-функции
+// }, initialValue);
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает что угодно.
+// Делает что угодно.
+// Легче всего представить его работу на примере подсчёта суммы элементов массива.
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+// console.log(total); // 32
+// Первый параметр коллбек-функции (previousValue) это аккумулятор, то есть промежуточный результат. Значение которое вернёт коллбек-функция на текущей итерации, будет значением этого параметра на следующей.
+// Вторым аргументом для reduce() можно передать необязательное начальное значение аккумулятора - параметр initialValue.
+// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+// # присваивает ей значение параметра initialValue или первого элемента
+// # перебираемого массива, если initialValue не задан.
+// previousValue = 0
+// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+// Результат - 32
+// То есть метод reduce() используется когда необходимо взять «много» и привести к «одному». В повседневных задачах его применение сводится к работе с числами.
+// Задание
+// Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось общее игровое время из массива playtimes.
+// Тесты
+// Объявлена переменная players
+// Значение переменной players это объект игроков с игровым временем каждого
+// Объявлена переменная playtimes
+// Значение переменной playtimes это массив [1270, 468, 710, 244]
+// Объявлена переменная totalPlayTime
+// Значение переменной totalPlayTime это число 2692
+// Для перебора массива playtimes используется метод reduce()
+// Объявлена переменная averagePlayTime
+// Значение переменной averagePlayTime это число 673
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Change code below this line
+const totalPlayTime = playtimes;
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+// Решение
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+const totalPlayTime = playtimes.reduce((item, value ) => {
+return item + value}, 0);
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+// Задача 35
+
+// Метод reduce() и массив объектов
+// При работе с массивом объектов выполняется редуцирование по значению какого-то свойства. Например, есть массив студентов с баллами за тест. Необходимо получить средний бал.
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+// Название аккумулятора может быть произвольным, это просто параметр функции
+// const totalScore = students.reduce((total, student) => {
+//   return total + student.score;
+// }, 0);
+// const averageScore = totalScore / students.length;
+// Задание
+// Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
+// Тесты
+// Объявлена переменная players
+// Значение переменной players это массив объектов игроков
+// Объявлена переменная totalAveragePlaytimePerGame
+// Значение переменной totalAveragePlaytimePerGame это число 1023
+// Для перебора массива players используется метод reduce()
+
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+const totalAveragePlaytimePerGame = players;
+
+// Решение
+
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+  return total + player.playtime / player.gamesPlayed
+}, 0);
+
+// Задача 36
+
+// Задача. Общий баланс пользователей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+// Задание
+// Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
+// Тесты
+// Объявлена переменная calculateTotalBalance
+// Переменной calculateTotalBalance присвоена стрелочная функция с параметром (users)
+// Для перебора параметра users используется метод reduce()
+// Вызов функции с указанным массивом пользователей возвращает число 20916
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// Change code below this line
+const calculateTotalBalance = users => {
+};
+// Change code above this line
+
+// Решение
+
+const calculateTotalBalance = (users) => {
+	total = users.flatMap(user => user.balance).reduce((total, user) => {
+		return (total + user);
+	}, 0);
+  return total
+}
+
+// Задача 37
+
+// Задача. Общее количество друзей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+// Задание
+// Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех пользователей из массива users.
+// Тесты
+// Объявлена переменная getTotalFriendCount
+// Переменной getTotalFriendCount присвоена стрелочная функция с параметром (users)
+// Для перебора параметра users используется метод reduce()
+// Вызов функции с указанным массивом пользователей возвращает число 14
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+// Change code below this line
+const getTotalFriendCount = users => {
+};
+// Change code above this line
+
+// Решение
+
+const getTotalFriendCount = users => {
+  return users.reduce((allFriends, user)=>{
+  return (allFriends + user.friends.length);
+  },0);
+};
+
+// Задача 38
+
+// Метод sort()
+// Метод sort() сортирует элементы массива, но в отличии от остальных перебирающих методов, он сортирует исходный массив.
+// Сортирует и изменяет исходный массив.
+// Возвращает изменённый массив, то есть ссылку на отсортированный исходный.
+// По умолчанию сортирует по возрастанию.
+// Сортировка происходит путём приведения значений к строке и сравнения порядковых номеров в таблице Unicode.
+// Такой массив чисел будет отсортирован по возврастанию.
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log(scores); // [19, 35, 56, 61, 74, 92]
+// Но, так как по умолчанию значения приводятся к строке, стандартная сортировка чисел работает необычно. Поэтому в следующем упражнении мы рассмотрим как задавать свой порядок сортировки.
+// const scores = [27, 2, 41, 4, 7, 3, 75];
+// scores.sort();
+// console.log(scores); // [2, 27, 3, 4, 41, 7, 75]
+// Массив строк сортируется по алфавиту.
+// const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+// students.sort();
+// console.log(students); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+// При этом порядковый номер заглавных букв меньше чем у прописных.
+// const letters = ["b", "B", "a", "A", "c", "C"];
+// letters.sort();
+// console.log(letters); // ["A", "B", "C", "a", "b", "c"]
+// Из-за того, что сортируется исходный массив, нарушается принцип чистоты функций и нельзя удобно сделать несколько производных коллекций на базе исходной. Например, сделать коллекцию отсортированную по возрастанию, а другую по убыванию. Поэтому перед сортировкой делают полную копию исходного массива и сортируют уже её.
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort();
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// Задание
+// Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
+// Тесты
+// Объявлена переменная releaseDates
+// Значение переменной releaseDates это массив [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+// Объявлена переменная authors
+// Значение переменной authors это массив ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky"]
+// Объявлена переменная ascendingReleaseDates
+// Значение переменной ascendingReleaseDates это массив [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+// Объявлена переменная alphabeticalAuthors
+// Значение переменной alphabeticalAuthors это массив ["Bernard Cornwell", "Tanith Lee", "Robert Sheckley", "Fyodor Dostoevsky"]
+// Использован метод sort()
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+// Change code below this line
+const ascendingReleaseDates = releaseDates;
+const alphabeticalAuthors = authors;
+
+// Решение
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+"Tanith Lee",
+"Bernard Cornwell",
+"Robert Sheckley",
+"Fyodor Dostoevsky",
+];
+const ascendingReleaseDates = [...releaseDates].sort();
+const alphabeticalAuthors = [...authors].sort();
+
+// Задача 39
+
+// Свой порядок сортировки чисел
+// Для указания своего порядка сортировки методу sort(compareFunction) нужно передать коллбек-функцию с двумя параметрами. Это функция сравнения (compare function), порядок сортировки зависит от её результата. Метод sort() будет вызывать её для произвольных двух элементов.
+// массив.sort((a, b) => {
+// Callback function body
+// });
+// a - первый элемент для сравнения.
+// b - второй элемент для сравнения.
+// Если вызов compareFunction(a, b) возвращает любое отрицательное значение, то есть a меньше b, сортировка поставит a перед b. Это сортировка по возрастанию.
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort((a, b) => a - b);
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// Если вызов compareFunction(a, b) возвращает любое положительное значение больше нуля, то есть b больше a, сортировка поставит b перед a. Это сортировка по убыванию.
+// const scores = [61, 19, 74, 35, 92, 56];
+// const descendingScores = [...scores].sort((a, b) => b - a);
+// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+// Eсли вызов compareFunction(a, b) вернёт 0, сортировка оставит a и b неизменными по отношению друг к другу, но отсортирует их по отношению ко всем другим элементам. Но вообще не важно, что возвращать, если их взаимный порядок не имеет значения.
+// Задание
+// Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates копия отсортированная по убыванию.
+// Тесты
+// Объявлена переменная releaseDates
+// Значение переменной releaseDates это массив [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+// Объявлена переменная ascendingReleaseDates
+// Значение переменной ascendingReleaseDates это массив [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+// Объявлена переменная descendingReleaseDates
+// Значение переменной descendingReleaseDates это массив [2016, 2012, 2008, 1997, 1984, 1973, 1967]
+// Использован метод sort()
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Change code below this line
+const ascendingReleaseDates = releaseDates;
+const descendingReleaseDates = releaseDates;
+
+// Решение
+
+
