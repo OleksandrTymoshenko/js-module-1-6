@@ -678,3 +678,626 @@ class Car {
 
 // Решение
 
+class Car {
+  #brand;
+  model;
+  price;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  getBrand(brand) {
+  	return this.#brand
+  }
+  changeBrand(newBrand) {
+  this.#brand = newBrand;
+  	return this.newBrand
+}
+}
+
+// Задача 13
+
+// Задача: склад 2.0
+// Задание
+// Выполни рефакторинг класса Storage, сделав свойство items приватным.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// Тесты
+// Объявлен класс Storage
+// У объекта storage нет свойства items
+// В классе Storage объявлен метод getItems
+// В классе Storage объявлен метод addItem
+// В классе Storage объявлен метод removeItem
+// Свойство items в классе Storage объявлено приватным
+// Конструктор класса принимает свойство items
+// В результате вызова new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значение переменной storage это объект
+// Первый вызов storage.getItems(), сразу после инциализации экземпляра, возвращает массив ["Nanitoids", "Prolonger", "Antigravitator"]
+// Второй вызов, storage.getItems(), после вызова storage.addItem("Droid"), возвращает массив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// Третий вызов storage.getItems(), после вызова storage.removeItem("Prolonger"), возвращает массив ["Nanitoids", "Antigravitator", "Droid"]
+
+class Storage {
+  // Change code below this line
+  constructor(items) {
+    this.items = items;
+  }
+  getItems() {
+    return this.items;
+  }
+  addItem(newItem) {
+    this.items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    this.items = this.items.filter(item => item !== itemToRemove);
+  }
+}
+// Change code above this line
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+// Решение
+
+  class Storage {
+    #items
+  constructor(items) {
+    this.#items = items;
+  }
+  getItems() {
+    return this.#items;
+  }
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(item => item !== itemToRemove);
+  }
+  }
+  // Change code above this line
+  const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+  console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+  storage.addItem("Droid");
+  console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+  storage.removeItem("Prolonger");
+  console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+// Задача 14
+
+// Задача: конструктор строк 2.0
+// Задание
+// Выполни рефакторинг класса StringBuilder, сделав свойство value приватным.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// Тесты
+// Объявлен класс StringBuilder
+// Свойство value в классе StringBuilder объявлено приватным
+// В классе StringBuilder объявлен метод getValue
+// В классе StringBuilder объявлен метод padEnd
+// В классе StringBuilder объявлен метод padStart
+// В классе StringBuilder объявлен метод padBoth
+// В результате вызова new StringBuilder('.') значение переменной builder это объект
+// У объекта builder нет свойства value
+// Первый вызов builder.getValue(), сразу после инциализации экземпляра, возвращает строку .
+// Второй вызов builder.getValue(), после вызова builder.padStart("^"), возвращает строку ^.
+// Третий вызов builder.getValue(), после вызова builder.padEnd("^"), возвращает строку ^.^
+// Четвёртый вызов builder.getValue(), после вызова builder.padBoth("="), возвращает строку =^.^=
+
+class StringBuilder {
+  // Change code below this line
+  constructor(initialValue) {
+    this.value = initialValue;
+  }
+  getValue() {
+    return this.value;
+  }
+  padEnd(str) {
+    this.value += str;
+  }
+  padStart(str) {
+    this.value = str + this.value;
+  }
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+
+// Решение
+
+class StringBuilder {
+    #value;
+  constructor(value) {
+    this.#value = value;
+  }
+  getValue() {
+    return this.#value;
+  }
+  padEnd(str) {
+    this.#value += str;
+  }
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+
+// Задача 15
+
+// Геттеры и сеттеры
+// Геттеры и сеттеры - это более краткий синтаксис объявления методов для взаимодействия со свойствами. Геттер и сеттер имитируют обычное публичное свойство класса, но позволяют изменять другие свойства более удобным способом. Геттер выполняется при попытке получить значение свойства, а сеттер - при попытке его изменить.
+// Геттеры и сеттеры хорошо использовать для простых операций чтения и изменения значения свойств, особенно приватных, как их публичный интерфейс. Для работы со свойством которое хранит массив или объект они не подойдут.
+// class User {
+//   #email;
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.#email = email;
+//   }
+//   Геттер email
+//   get email() {
+//     return this.#email;
+//   }
+//   Сеттер email
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+// Мы объявили геттер и сеттер email поставив перед именем свойства ключевые слова get и set. Внутри этих методов мы или возвращаем значение приватного свойства #email или изменяем его значение. Геттер и сеттер идут впаре и должны называться одинаково.
+// const mango = new User({ name: "Mango", email: "mango@mail.com" });
+// console.log(mango.email); // mango@mail.com
+// mango.email = "mango@supermail.com";
+// console.log(mango.email); // mango@supermail.com
+// При обращении к mango.email вызызвается геттер get email() {...} и выполняется его код. При попытке записи mango.email = "mango@supermail.com" вызывается сеттер set email(newEmail) {...} и строка "mango@supermail.com" будет значением параметра newEmail.
+// Плюс в том, что это методы, а значит при записи можно выполнить дополнительный код, например с какими-то проверками, в отличии от выполнениях этой же операции напрямую со свойством.
+// set email(newEmail) {
+//   if(newEmail === "") {
+//     console.error("Ошибка! Почта не может быть пустой строкой!");
+//     return;
+//   }
+//   this.#email = newEmail;
+// }
+// Задание
+// Выполни рефакторинг класса Car. Сделай свойства model и price приватными, также как #brand. Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры и сеттеры brand, model и price для взаимодействия с приватными свойствами.
+// Тесты
+// Объявлен класс Car
+// В классе Car объявлено приватное свойство brand
+// В классе Car объявлено приватное свойство model
+// В классе Car объявлено приватное свойство price
+// Конструктор класса принимает объект со свойствами brand, model и price
+// В классе Car объявлен геттер brand
+// В классе Car объявлен сеттер brand
+// В классе Car объявлен геттер model
+// В классе Car объявлен сеттер model
+// В классе Car объявлен геттер price
+// В классе Car объявлен сеттер price
+
+class Car {
+  // Change code below this line
+  #brand;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  getBrand() {
+    return this.#brand;
+  }
+  changeBrand(newBrand) {
+    this.#brand = newBrand;
+  }
+  getModel() {
+    return this.model;
+  }
+  updateModel(newModel) {
+    this.model = newModel;
+  }
+  getPrice() {
+    return this.price;
+  }
+  setPrice(newPrice) {
+    this.price = newPrice;
+  }
+  // Change code above this line
+}
+
+// Решение
+
+class Car {
+  #brand;
+  #model;
+  #price;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.#model = model;
+    this.#price = price;
+  }
+  get brand() {
+    return this.#brand;
+  }
+  set brand(newBrand) {
+    this.#brand = newBrand;
+  }
+  get model() {
+    return this.model;
+  }
+  set model(newModel) {
+    this.model = newModel;
+  }
+  get price() {
+    return this.price;
+  }
+  set price(newPrice) {
+    this.price = newPrice;
+  }
+}
+
+// Задача 16
+
+// Статические свойства
+// Кроме публичных и приватных свойств будущего экземпляра, в классе можно объявить его собственные свойства, доступные только классу, но не его экземплярам - статические свойства (static). Они полезны для хранения информации относящейся к самому классу.
+// Добавим классу пользователя приватное свойство role - его роль, определяющую набор прав, например администратор, редактор, просто пользователь и т п. Возможные роли пользователей будем хранить как статическое свойство Roles - объект со свойствами.
+// Статические свойства объявляются в теле класса. Перед именем свойства добавляется ключевое слово static.
+// class User {
+//   Объявление и инициализация статического свойства
+//   static Roles = {
+//     ADMIN: "admin",
+//     EDITOR: "editor",
+//   };
+//   #email;
+//   #role;
+//   constructor({ email, role }) {
+//     this.#email = email;
+//     this.#role = role;
+//   }
+//   get role() {
+//     return this.#role;
+//   }
+//   set role(newRole) {
+//     this.#role = newRole;
+//   }
+// }
+// const mango = new User({
+//   email: "mango@mail.com",
+//   role: User.Roles.ADMIN,
+// });
+// console.log(mango.Roles); // undefined
+// console.log(User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
+// console.log(mango.role); // "admin"
+// mango.role = User.Roles.EDITOR;
+// console.log(mango.role); // "editor"
+// Статические свойства также могут быть приватные, то есть доступные только внутри класса. Для этого имя совйства должно начинаться с символа #, также как приватные свойства. Обращение к приватному статическому свойству вне тела класса вызовет ошибку.
+// Задание
+// Выполни рефакторинг класса Car. Добавь публичное статическое свойство MAX_PRICE со значением 50000 - максимально допустимая цена автомобиля.
+// Добавь сеттеру price проверку передаваемого значения параметра newPrice. Если оно больше чем MAX_PRICE, сеттер ничего не делает, а если меньше или равно, то перезаписывает цену автомобиля.
+// Тесты
+// Объявлен класс Car
+// У класса Car есть статическое свойство MAX_PRICE
+// Значение статического свойства MAX_PRICE это число 50000
+// У экземпляра нет свойства MAX_PRICE
+// В классе Car объявлен геттер price
+// В классе Car объявлен сеттер price
+// Вызов сеттера price у экземпляра класса, со значением аргумента меньше чем значение MAX_PRICE, изменяет свойство #price
+// Вызов сеттера price у экземпляра класса, со значением аргумента больше чем значение MAX_PRICE, не изменяет свойство #price
+
+class Car {
+  // Change code below this line
+  #price;
+  constructor({ price }) {
+    this.#price = price;
+  }
+  get price() {
+    return this.#price;
+  }
+  set price(newPrice) {
+    this.#price = newPrice;
+  }
+  // Change code above this line
+}
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+audi.price = 49000;
+console.log(audi.price); // 49000
+audi.price = 51000;
+console.log(audi.price); // 49000
+
+// Решение
+
+class Car {
+ static MAX_PRICE = 50000;
+  #price;
+  constructor({ price }) {
+    this.#price = price;
+  }
+  get price() {
+    return this.#price;
+  }
+  set price(newPrice) {
+    if (newPrice < Car.MAX_PRICE) {
+    this.#price = newPrice;
+  }
+}
+}
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+audi.price = 49000;
+console.log(audi.price); // 49000
+audi.price = 51000;
+console.log(audi.price); // 49000
+
+// Задача 17
+
+class Car {
+  static #MAX_PRICE = 50000;
+  static checkPrice(price) {
+   if (Car.#MAX_PRICE < price) {
+   return "Error! Price exceeds the maximum"
+   }
+   return "Success! Price is within acceptable limits"
+  constructor({ price }) 
+    this.price = price;
+  }
+}
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// Задача 18
+
+// Наследование классов
+// Ключевое слово extends позволяет реализовать наследование классов, когда один класс (дочерний, производный) наследует свойства и методы другого класса (родителя).
+// class Child extends Parent {
+//   ...
+// }
+// В выражении class Child extends Parent дочерний класс Child наследует (расширяет) от родительского класса Parent. Это означает, что мы можем объявить базовый класс, который хранит общие характеристики и методы для группы производных классов, которые наследуют свойства и методы родителя, но также добавляют свои уникальные.
+// Например, в приложении есть пользователи разных ролей - администратор, писатель статей, контент менеджер и т. п. У каждого типа пользователя есть набор общих характеристик, например почта и пароль, но также есть и уникальные.
+// Сделав независимые классы для каждого типа пользователя мы получим дублирование общих свойств и методов, и при необходимости изменить например название свойства, придётся проходить по всем классам, это неудобно и трудозатратно.
+// Вместо этого можно сделать общий класс User, который будет хранить набор общих свойств и методов, после чего сделать классы для каждого типа пользователя которые наследуют этот набор от класса User. При необходимости изменить что-то общее, достаточно будет поменять только код класса User.
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+//   get email() {
+//     return this.email;
+//   }
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class ContentEditor extends User {
+//  Тело класса ContentEditor
+// }
+// const editor = new ContentEditor("mango@mail.com");
+// console.log(editor); // { email: "mango@mail.com" }
+// console.log(editor.email); // "mango@mail.com"
+// Класс ContentEditor наследует от класса User его конструктор, геттер и сеттер email, а также одноимённое публичное свойство. Важно помнить что приватные свойства и методы класса-родителя не наследуются классом-ребёнком.
+// Задание
+// В приложении нужен администратор с возможностью добавлять почты пользователей в чёрный список.
+// Объяви класс Admin, который наследует от класса User
+// Добавь классу Admin публичное статическое свойство AccessLevel (уровень доступа), значение которого это объект { BASIC: "basic", SUPERUSER: "superuser" }
+// Тесты
+// Объявлен класс Admin
+// Класс Admin наследует от класса User
+// У класса Admin есть публичное статическое свойство AccessLevel
+// Обращение к Admin.AccessLevel.BASIC возвращает строку "basic"
+// Обращение к Admin.AccessLevel.SUPERUSER возвращает строку "superuser"
+
+class User {
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+// Change code below this line
+
+// Решение
+
+class User {
+  constructor(email) {
+    this.email = email;
+  }
+  get email() {
+    return this.email;
+  }
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser"
+  };
+};
+
+// Задача 19
+
+// Конструктор дочернего класса
+// Первым делом в конструкторе дочернего класса необходимо вызвать специальную функцию super(аргументы) - это псевдоним конструктора родительского класса. В противном случае, при попытке обратиться к this в конструкторе дочернего клааса, будет ошибка. При вызове конструктора класса родителя передаём необходимые ему аругменты для инициализации свойств.
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+//   get email() {
+//     return this.email;
+//   }
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class ContentEditor extends User {
+//   constructor({ email, posts }) {
+//     Вызов конструктора родительского класса User
+//     super(email);
+//     this.posts = posts;
+//   }
+// }
+// const editor = new ContentEditor({ email: "mango@mail.com", posts: [] });
+// console.log(editor); // { email: 'mango@mail.com', posts: [] }
+// console.log(editor.email); // 'mango@mail.com'
+// Задание
+// Добавь классу Admin метод constructor, который принимает один параметр - объект настроек с двумя свойствами email и accessLevel. Добавь классу Admin публичное свойство accessLevel, значение которого будет передаваться при вызове конструктора.
+// Чтобы показать как будет использоваться класс Admin мы добавили инициализацию экземпляра под объявлением класса.
+// Тесты
+// Объявлен класс Admin
+// Класс Admin наследует от класса User
+// У класса Admin есть публичное статическое свойство AccessLevel
+// У класса Admin есть метод constructor с параметром в виде объекта {email, accessLevel}
+// У класса Admin в конструкторе для свойства email используется обращение к конструктору родительского класса
+// Обращение к Admin.AccessLevel.BASIC возвращает строку "basic"
+// Обращение к Admin.AccessLevel.SUPERUSER возвращает строку "superuser"
+
+class User {
+  email;
+  constructor(email) {
+    this.email = email;
+  }
+  get email() {
+    return this.email;
+  }
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  // Change code below this line
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+  // Change code above this line
+}
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+// Решение
+
+class User {
+  email;
+  constructor(email) {
+    this.email = email;
+  }
+  get email() {
+    return this.email;
+  }
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  constructor ({ email, accessLevel }) {
+    super(email);  
+    this.accessLevel = accessLevel  
+  };
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+}
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+// Задача 20
+
+// Методы дочернего класса
+// В дочернем классе можно объявлять методы, которые будут доступны только его экземплярам.
+// Представим что выше есть объявление класса User
+// class ContentEditor extends User {
+//   constructor({ email, posts }) {
+//     super(email);
+//     this.posts = posts;
+//   }
+//   addPost(post) {
+//     this.posts.push(post);
+//   }
+// }
+// const editor = new ContentEditor({ email: "mango@mail.com", posts: [] });
+// console.log(editor); // { email: 'mango@mail.com', posts: [] }
+// console.log(editor.email); // 'mango@mail.com'
+// editor.addPost("post-1");
+// console.log(editor.posts); // ['post-1']
+// Задание
+// Добавь классу Admin следующие свойства и методы.
+// Публичное свойство blacklistedEmails для хранения чёрного списка почтовых адресов пользователей. Значение по умолчанию это пустой массив.
+// Публичный метод blacklist(email) для добавления почты в чёрный список. Метод должен добавлять значение параметра email в массив хранящийся в свойстве blacklistedEmails.
+// Публичный метод isBlacklisted(email) для проверки почты в чёрном списке. Метод должен проверять наличие значения параметра email в массиве хранящемся в свойстве blacklistedEmails и возвращать true или false.
+// После объявления класса мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// Тесты
+// Объявлен класс Admin
+// Класс Admin наследует от класса User
+// У класса Admin есть публичное свойство blacklistedEmails
+// У класса Admin есть публичный метод blacklist
+// У класса Admin есть публичный метод isBlacklisted
+// После вызова mango.blacklist("poly@mail.com") значение свойства blacklistedEmails это массив ["poly@mail.com"]
+// Вызов mango.isBlacklisted("mango@mail.com") возвращает false
+// Вызов mango.isBlacklisted("poly@mail.com") возвращает true
+
+class User {
+  email;
+  constructor(email) {
+    this.email = email;
+  }
+  get email() {
+    return this.email;
+  }
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  // Change code below this line
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+  }
+  // Change code above this line
+}
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
