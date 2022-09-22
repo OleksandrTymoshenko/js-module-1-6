@@ -1522,7 +1522,7 @@ console.log(checkForName("Vadim Nekrasov", "vadim"));
 console.log(checkForName("Egor Kolbasov", "Egor"));
 console.log(checkForName("Vadim Nekrasov", "Dima"));
 
-// Задача 35
+// Задача 36
 
 // Задача: проверка спама
 // Задание
