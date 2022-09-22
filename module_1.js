@@ -7,6 +7,8 @@
 
 // Задача 1
 
+// Объявление переменных
+
 // Переменные используются для хранения данных и состоят из идентификатора (имени) и области в памяти, где хранится их значение. Переменную можно представить как коробку с надписью (именем), в которой что-то лежит (значение).
 
 // <ключевое слово> <имя переменной> = <значение>
@@ -82,6 +84,654 @@ let pricePerItem = 2000;
 // Change code below this line
 	productName = "Repair droid";
 	pricePerItem = 3500;
+
+// Задача 3
+
+// Типы примитивов (числа, строки, були)
+// В JavaScript переменная не ассоциируется с каким-либо типом данных, тип есть у её значения. То есть переменная может хранить значения разных типов.
+
+// Number - целые числа и числа с плавающей запятой (точкой).
+// String - строки, последовательность из нуля или более символов. Строка начинается и заканчивается одиночной ' или двойными кавычками ".
+// Boolean - логический тип данных, флаги состояния. Всего два значения: true и false. Например, на вопрос включен ли свет в комнате можно ответить да (true) или нет (false).
+// // Числа
+// const age = 20;
+// const salary = 3710.84;
+
+// // Строки
+// const name = "Mango";
+// const description = "JavaSript essentials";
+
+// // Були
+// const isModalOpen = true;
+// const isLoggedIn = false;
+// Задание
+// Объяви следующие переменные используя ключевое слово const или let и присвой им соответствующие значения.
+
+// topSpeed - число 160.
+// distance - число 617.54.
+// login - строка "mango935".
+// isOnline - буль true.
+// isAdmin - буль false.
+// Тесты
+// Объявлена переменная topSpeed
+// Значение переменной topSpeed это число 160
+// Объявлена переменная distance
+// Значение переменной distance это число 617.54
+// Объявлена переменная login
+// Значение переменной login это строка "mango935"
+// Объявлена переменная isOnline
+// Значение переменной isOnline это буль true
+// Объявлена переменная isAdmin
+// Значение переменной isAdmin это буль false
+
+// Change code below this line
+const topSpeed = 160;
+const distance = 617.54;
+const login = "mango935";
+const isOnline = true;
+const isAdmin = false;
+
+// Задача 4
+
+// Математические операторы
+// Назначение, функционал и приоритет (порядок) операций ничем не отличаются от школьного курса алгебры. Операторы возвращают значение как результат выражения.
+
+// const x = 10;
+// const y = 5;
+
+// // Сложение
+// console.log(x + y); // 15
+
+// // Вычитание
+// console.log(x - y); // 5
+
+// // Умножение
+// console.log(x * y); // 50
+
+// // Деление
+// console.log(x / y); // 2
+// Полезно
+// Важно запомнить правильное именование составляющих алгебраического выражения: +, -, * и / называются операторами, а то на чём они применяются (числа) - операнды.
+
+// Задание
+// Дополни код, присвоив переменной totalPrice выражение для подсчёта общей суммы заказа. Переменная pricePerItem хранит цену одной единицы товара, а orderedQuantity - количество единиц товара в заказе.
+
+// Тесты
+// Объявлена переменная pricePerItem
+// Значение переменной pricePerItem это число 3500
+// Объявлена переменная orderedQuantity
+// Значение переменной orderedQuantity это число 4
+// Объявлена переменная totalPrice
+// Значение переменной totalPrice это число 14000
+// Использован оператор *
+
+const pricePerItem = 3500;
+const orderedQuantity = 4;
+
+// Change code below this line
+const totalPrice = pricePerItem * orderedQuantity;
+
+// Задача 5
+
+// Шаблонные строки
+// Шаблонные строки это альтернатива конкатенации с более удобным синтаксисом. Шаблонная строка заключена в обратные (косые) кавычки вместо двойных или одинарных и может содержать местозаполнители, которые обозначаются знаком доллара и фигурными скобками - ${выражение}.
+
+// const guestName = "Mango";
+// const roomNumber = 207;
+// const greeting = `Добро пожаловать ${guestName}, вы поселены в номер ${roomNumber}`;
+// Задание
+// Объяви перемнную message и запиши в неё сообщение о покупке, строку в формате: "You picked <имя товара>, price per item is <цена товара> credits". Где <имя товара> и <цена товара> это значения переменных productName и pricePerItem. Используй синтаксис шаблонных строк.
+
+// Тесты
+// Объявлена переменная productName
+// Значение переменной productName это строка "Droid"
+// Объявлена переменная pricePerItem
+// Значение переменной price это число 3500
+// Объявлена переменная message
+// Значение переменной message это строка "You picked Droid, price per item is 3500 credits"
+
+const productName = "Droid";
+const pricePerItem = 3500;
+
+// Change code below this line
+
+const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
+
+// Задача 6
+
+// Задача: заказ продукта
+// Задание
+// Магазин по продаже ремонтных дроидов готов к открытию, осталось написать скрипт для их заказа. Объяви переменные и присвой им соответствующие значения:
+
+// pricePerDroid - цена одного дроида, значение 800
+// orderedQuantity - количество дроидов в заказе, значение 6
+// deliveryFee - стоимость доставки, значение 50
+// totalPrice - общая сумма заказа к оплате, не забудь о стоимости доставки
+// message - сообщение о состоянии заказа в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."
+// Тесты
+// Объявлена переменная orderedQuantity
+// Значение переменной orderedQuantity это число 6
+// Объявлена переменная pricePerDroid
+// Значение переменной pricePerDroid это число 800
+// Объявлена переменная deliveryFee
+// Значение переменной deliveryFee это число 50
+// Объявлена переменная totalPrice
+// Значение переменной totalPrice это число 4850
+// Объявлена переменная message
+// Значение переменной message это строка "You ordered droids worth 4850 credits. Delivery (50 credits) is included in total price."
+
+// Change code below this line
+const pricePerDroid = 800;
+const orderedQuantity = 6;
+const deliveryFee = 50;
+const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+// Задача 7
+
+// Объявление и вызов функции
+// Функция - это подпрограмма, независимая часть кода, предназначенная для многократного выполнения конкретной задачи с разными начальными значениями.
+
+// Функцию можно представить как чёрный ящик, она получает что-то на входе (данные), и возвращает что-то на выходе (результат выполнения кода внутри неё).
+
+// // 1. Объявление функции multiply
+// function multiply() {
+//   // Тело функции
+//   console.log("multiply function invocation");
+// }
+
+// // 2. Вызовы функции multiply
+// multiply(); // multiply function invocation
+// multiply(); // multiply function invocation
+// multiply(); // multiply function invocation
+// Объявление функции начинается с ключевого слова function, за которым идёт её имя - глагол отвечающий на вопрос «Что сделать?» и пара круглых скобок. Тело функции заключено в фигурные скобки {} и содержит инструкции, которые необходимо выполнить при её вызове. Затем, когда необходимо, функция вызывается с помощью имени и пары круглых скобок.
+
+// Задание
+// Объяви функцию sayHi, внутри которой добавь console.log() со строкой "Hello, this is my first function!". После объявления вызови функцию sayHi.
+
+// Тесты
+// Ожидается объявление функции
+// Функции присвоено имя sayHi
+// В теле функции sayHi есть console.log("Hello, this is my first function!")
+// После объявления есть вызов функции sayHi
+
+// Change code below this line
+function sayHi () {
+	console.log("Hello, this is my first function!")
+}
+
+sayHi();
+
+// Задача 8
+
+// Параметры и аргументы
+// В круглых скобках после имени функции идут параметры - перечисление данных, которые функция ожидает при вызове.
+
+// Параметры - это локальные переменные доступные только в теле функции. Они разделяются запятыми. Параметров может быть несколько или вообще их может не быть, тогда записываются просто пустые круглые скобки.
+
+// При вызове функции, в круглых скобках можно передать аргументы - значения для объявленных параметров функции.
+
+// // 1. Объявление параметров x, y, z
+// function multiply(x, y, z) {
+//   console.log(`Результат умножения равен ${x * y * z}`);
+// }
+
+// // 2. Передача аргументов
+// multiply(2, 3, 5); // Результат умножения равен 30
+// multiply(4, 8, 12); // Результат умножения равен 384
+// multiply(17, 6, 25); // Результат умножения равен 2550
+// Порядок передачи аргументов должен соответствует порядку объявленых параметров: значение первого аргумента будет присвоено первому параметру, второго аргумента второму параметру и т. д.
+
+// Задание
+// Функция add должна уметь складывать три числа и выводить результат в консоль. Добавь функции add три параметра a, b и c, которые будут получать значения аргументов при её вызове.
+
+// Дополни console.log() так, чтобы он логировал строку "Addition result equals <result>", где <result> это сумма переданных чисел.
+
+// Тесты
+// Объявлена функция add(a, b, c)
+// Вызов add(15, 27, 10) выводит в консоль "Addition result equals 52"
+// Вызов add(10, 20, 30) выводит в консоль "Addition result equals 60"
+// Вызов add(5, 10, 15) выводит в консоль "Addition result equals 30"
+
+// Change code below this line
+function add(a, b, c) {
+  console.log(`Addition result equals ${a + b + c}`);
+  // Change code above this line
+}
+
+add(15, 27, 10);
+add(10, 20, 30);
+add(5, 10, 15);
+
+// Задача 9
+
+// Возврат значения
+// Оператор return используется для передачи значения из тела функции во внешний код. Когда интерпретатор встречает return, он сразу же выходит из функции (прекращает её выполнение), и возвращает указанное значение в то место кода, где функция была вызвана.
+
+// function multiply(x, y, z) {
+//   console.log("Код до return выполняется как обычно");
+
+//   // Возвращаем результат выражения умножения
+//   return x * y * z;
+
+//   console.log("Этот лог никогда не выполнится, он стоит после return");
+// }
+
+// // Результат работы функции можно сохранить в переменную
+// let result = multiply(2, 3, 5);
+// console.log(result); // 30
+
+// result = multiply(4, 8, 12);
+// console.log(result); // 384
+
+// result = multiply(17, 6, 25);
+// console.log(result); // 2550
+// Оператор return без явно указанного значения возвращает специальное значение undefined. При отсутствии return в теле функции, она все равно вернёт undefined.
+
+// Задание
+// Дополни код функции add так, чтобы она возвращала результат сложения значений трёх параметров a, b и c.
+
+// Тесты
+// Объявлена функция add(a, b, c)
+// В функции add есть оператор return
+// Вызов add(15, 27, 10) возвращает 52
+// Вызов add(10, 20, 30) возвращает 60
+// Вызов add(5, 10, 15) возвращает 30
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+function add(a, b, c) {
+  // Change code below this line
+return (a + b + c); 
+
+
+  // Change code above this line
+}
+
+add(2, 5, 8); // 15
+
+console.log(add(15, 27, 10));
+console.log(add(10, 20, 30));
+console.log(add(5, 10, 15));
+
+// Задача 10
+
+// Задача: шаблонные строки 2.0
+// Задание
+// Функция makeMessage(name, price) составляет и возвращает сообщение о покупке. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+
+// name - название товара
+// price - цена товара
+// Дополни код функции так, чтобы в переменную message записывалась строка "You picked <product name>, price per item is <product price> credits", где <product name> и <product price> это значения параметров name и price. Используй синтаксис шаблонных строк.
+
+// Внимание
+// Обрати внимание на то, что в коде нет вызовов функции makeMessage. С этого задания и дальше мы сами будем вызывать твои функции и проверять то, как они работают. Результат наших проверок ты увидишь в блоке Результаты под редактором кода.
+
+// Тесты
+// Объявлена функция makeMessage(name, price)
+// Вызов makeMessage('Radar', 6150) возвращает "You picked Radar, price per item is 6150 credits"
+// Вызов makeMessage('Scanner', 3500) возвращает "You picked Scanner, price per item is 3500 credits"
+// Вызов makeMessage('Reactor', 8000) возвращает "You picked Reactor, price per item is 8000 credits"
+// Вызов makeMessage('Engine', 4070) возвращает "You picked Engine, price per item is 4070 credits"
+
+function makeMessage (name, price) {
+  // Change code below this line
+   const message = `You picked ${name}, price per item is ${price} credits`;
+  // Change code above this line
+  return message;
+};
+
+// Задача 11
+
+// Задача: математические операторы 2.0
+// Задание
+// Функция calculateTotalPrice считает и возвращает общую сумму покупки. Она принимает два параметра, значения которых будут задаваться во время её вызова.
+
+// orderedQuantity - количество единиц товара в заказе;
+// pricePerItem - цена одной единицы товара.
+// Дополни код функции так, чтобы в переменную totalPrice записывалась общая сумма покупки, результат умножения кол-ва товаров на цену одного.
+
+// Тесты
+// Объявлена функция calculateTotalPrice (orderedQuantity, pricePerItem)
+// Вызов calculateTotalPrice(5, 100) возвращает 500
+// Вызов calculateTotalPrice(8, 60) возвращает 480
+// Вызов calculateTotalPrice(3, 400) возвращает 1200
+// Вызов calculateTotalPrice(1, 3500) возвращает 3500
+// Вызов calculateTotalPrice(12, 70) возвращает 840
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+function calculateTotalPrice (orderedQuantity, pricePerItem) {
+  // Change code below this line
+  const totalPrice = orderedQuantity * pricePerItem;
+
+  // Change code above this line
+  return totalPrice;
+};
+
+// Задача 12
+
+// Задача: заказ продукта 2.0
+// Задание
+// Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
+
+// orderedQuantity - количество дроидов в заказе
+// pricePerDroid - цена одного дроида
+// deliveryFee - стоимость доставки
+// Дополни код функции так, чтобы она возвращала сообщение о заказе в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь о цене доставки при вычислениях общей стоимости.
+
+// Тесты
+// Объявлена функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee)
+// Вызов makeOrderMessage(2, 100, 50) возвращает "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
+// Вызов makeOrderMessage(4, 300, 100) возвращает "You ordered droids worth 1300 credits. Delivery (100 credits) is included in total price."
+// Вызов makeOrderMessage(10, 70, 200) возвращает "You ordered droids worth 900 credits. Delivery (200 credits) is included in total price."
+
+function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+	const message = `You ordered droids worth ${orderedQuantity * pricePerDroid + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+
+  // Change code above this line
+  return message;
+}
+
+// Задача 20
+
+// Операторы сравнения >, >=, < и <=
+// Используются для сравнения двух значений. Результатом своего выполнения возвращают буль - true или false, то есть «да» или «нет».
+
+// > - больше
+// < - меньше
+// >= - больше или равно
+// <= - меньше или равно
+// const a = 2;
+// const b = 5;
+
+// console.log(a > b); // false
+// console.log(b > a); // true
+// console.log(a >= b); // false
+// console.log(b >= a); // true
+
+// console.log(a < b); // true
+// console.log(b < a); // false
+// console.log(a <= b); // true
+// console.log(b <= a); // false
+// Задание
+// Функция isAdult объявляет один параметр age (возраст), значение которого будет задаваться во время её вызова. Присвой переменной passed выражение проверки возраста пользователя на совершеннолетие. Человек считается совершеннолетним в возрасте 18 лет и старше.
+
+// Тесты
+// Объявлена функция isAdult(age)
+// В выражении проверки используется оператор >=
+// Вызов isAdult(20) возвращает true
+// Вызов isAdult(14) возвращает false
+// Вызов isAdult(8) возвращает false
+// Вызов isAdult(37) возвращает true
+
+function isAdult(age) {
+  // Change code below this line
+  const passed = age >= 18;
+
+  // Change code above this line
+  return passed;
+}
+
+// Задача 14
+
+// Операторы сравнения === и !==
+// «Нестрогие» операторы == и != выполняют преобразование типов сравниваемых значений, что может привести к ошибкам, особенно у начинающих.
+
+// // ❌ Плохо, выполняется приведение типов
+// console.log(5 == "5"); // true
+// console.log(5 != "5"); // false
+// console.log(1 == true); // true
+// console.log(1 != true); // false
+// Поэтому для проверки равенства или неравенства двух значений используются операторы === (строгое равенство) и !== (строгое неравенство), которые не выполняют приведение типов операндов.
+
+// // ✅ Хорошо, приведение типов не выполняется
+// console.log(5 === "5"); // false
+// console.log(5 === 5); // true
+// console.log(5 !== "5"); // true
+// console.log(5 !== 5); // false
+// console.log(1 === true); // false
+// console.log(1 !== true); // true
+// Задание
+// Функция isValidPassword(password) проверяет равенство сохранённого и введённого паролей и возвращает результат проверки - буль true или false. Переменная SAVED_PASSWORD хранит значение ранее сохраненного пароля. Введённый пароль передаётся в параметр password.
+
+// Присвой переменной isMatch выражение проверки равенства введённого и сохранённого ранее паролей. Результатом выражения проверки должно быть true, если значения совпадают, и false, если нет.
+
+// Тесты
+// Объявлена функция isValidPassword(password)
+// В выражении проверки паролей использован оператор ===
+// Вызов isValidPassword("mangodab3st") возвращает false
+// Вызов isValidPassword("kiwirul3z") возвращает false
+// Вызов isValidPassword("jqueryismyjam") возвращает true
+
+function isValidPassword(password) {
+  const SAVED_PASSWORD = 'jqueryismyjam';
+  // Change code below this line
+  const isMatch = password === SAVED_PASSWORD;
+
+  // Change code above this line
+  return isMatch;
+}
+
+// Задача 15
+
+// Инструкция if...else
+// Задание
+// Добавь выражение проверки совершеннолетия пользователя, значения параметра age, в условие для инструкции if.
+
+// Если пользователь совершеннолетний, должен выполняться блок if и в переменную message записывается строка "You are an adult".
+// В противном случае должен выполняться блок else и записывается строка "You are a minor".
+// Тесты
+// Объявлена функция checkAge(age).
+// В выражении проверки возраста использован оператор >=
+// Вызов checkAge(20) возвращает "You are an adult"
+// Вызов checkAge(8) возвращает "You are a minor"
+// Вызов checkAge(14) возвращает "You are a minor"
+// Вызов checkAge(38) возвращает "You are an adult"
+
+function checkAge(age) {
+  let message;
+
+  if (age >= 18) { 
+    message = 'You are an adult';
+  } else {
+    message = 'You are a minor';
+  }
+
+  return message;
+}
+
+// Задача 16
+
+// Задача: склад товаров
+// Задание
+// Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+// available - общее количество товаров на складе
+// ordered - единиц товара в заказе
+// Используя ветвления дополни код функции так, что:
+
+// Если в заказе указано число, превышающее количество товаров на складе, в переменную message записывается строка "Not enough goods in stock!".
+// В противном случае записывается строка "Order is processed, our manager will contact you.".
+// Тесты
+// Объявлена функция checkStorage(available, ordered).
+// Вызов checkStorage(100, 50) возвращает "Order is processed, our manager will contact you."
+// Вызов checkStorage(100, 130) возвращает "Not enough goods in stock!"
+// Вызов checkStorage(200, 20) возвращает "Order is processed, our manager will contact you."
+// Вызов checkStorage(200, 150) возвращает "Order is processed, our manager will contact you."
+// Вызов checkStorage(150, 180) возвращает "Not enough goods in stock!"
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+	if (available >= ordered) {
+    message = "Order is processed, our manager will contact you."
+    } else {
+      message = "Not enough goods in stock!"
+    }  
+  // Change code above this line
+  return message;
+}
+
+checkStorage(100, 50);
+checkStorage(100, 130);
+checkStorage(200, 20);
+checkStorage(200, 150);
+checkStorage(150, 180);
+
+// Задача 17
+
+// Комбинированный оператор присвоения
+// Комбинированные операторы это более краткий способ присвоить переменной новое значение основываясь на её предыдущем значении.
+
+// Будем увеличивать значение переменной age на единицу от предыдущего, имитируя обновление возраста после дня рождения пользователя.
+
+// let age = 25;
+// // Классическая запись
+// age = age + 1;
+// console.log(age); // 26
+// Сначала выполняется правая часть выражения. Вместо age подставляется 25, выполняется операция сложения и в переменную age записывается 26.
+
+// Выполним рефакторинг операции обновления возраста, используя комбинированный оператор присвоения с добавлением.
+
+// let age = 25;
+// // Просто более краткая запись, работает также
+// age += 1;
+// console.log(age); // 26
+// Задание
+// Замени выражения со стандартными математеческими операторами на комбинированный оператор присвоения с добавлением, вычитанием, умножением и делением.
+
+// Тесты
+// Значение переменной a равно 7
+// Использован оператор +=
+// Значение переменной b равно 6
+// Использован оператор -=
+// Значение переменной c равно 45
+// Использован оператор *=
+// Значение переменной d равно 2
+// Использован оператор /=
+
+let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a += 2;
+b -= 4;
+c *= 3;
+d /= 10;
+
+// Задача 18
+
+// Задача: проверка баланса
+// Задание
+// Станция по продаже ремонтных дроидов готова к запуску, осталось написать программное обеспечение для отдела продаж.
+
+// Функция makeTransaction(pricePerDroid, orderedQuantity, customerCredits) выполняет транзакцию по продаже дроидов и возвращает сообщение о результате операции. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+
+// pricePerDroid - цена одного дроида
+// orderedQuantity - кол-во заказанных дроидов
+// customerCredits - сумма средств на счету клиента
+// Дополни её следующим функционалом:
+
+// Объяви переменную totalPrice для хранения общей суммы заказа и присвой ей выражение расчёта этой суммы.
+// Добавь проверку сможет ли клиент оплатить заказ:
+// если сумма к оплате превышает количество кредитов на счету клиента, запиши в переменную message строку "Insufficient funds!";
+// в противном случае, вычти сумму покупки со счёта клиента и запиши в переменную message сообщение: "You ordered <число> droids, you have <число> credits left".
+// Тесты
+// Объявлена функция makeTransaction(pricePerDroid, orderedQuantity, customerCredits)
+// Вызов makeTransaction(3000, 5, 23000) возвращает "You ordered 5 droids, you have 8000 credits left"
+// Вызов makeTransaction(1000, 3, 15000) возвращает "You ordered 3 droids, you have 12000 credits left"
+// Вызов makeTransaction(5000, 10, 8000) возвращает "Insufficient funds!"
+// Вызов makeTransaction(2000, 8, 10000) возвращает "Insufficient funds!"
+// Вызов makeTransaction(500, 10, 5000) возвращает "You ordered 10 droids, you have 0 credits left"
+
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  let totalPrice = pricePerDroid * orderedQuantity;
+  
+  if (totalPrice > customerCredits) {
+    message = "Insufficient funds!";
+    } else {
+    message = `You ordered ${orderedQuantity} droids, you have ${customerCredits - totalPrice} credits left`;
+	}  
+  // Change code above this line
+  return message;
+}
+
+makeTransaction(3000, 5, 23000);
+makeTransaction(1000, 3, 15000);
+makeTransaction(5000, 10, 8000);
+makeTransaction(2000, 8, 10000);
+makeTransaction(500, 10, 5000); 
+
+// Задача 19
+
+// Блок else...if
+// Конструкция if...else может проверить и среагировать на выполнение или невыполнение только одного условия.
+
+// let cost;
+// const subscription = "pro";
+
+// if (subscription === "pro") {
+//   cost = 100;
+// } else {
+//   cost = 0;
+// }
+
+// console.log(cost); // 100
+// Блок else...if позволяет добавить после else еще один оператор if с условием. В конце цепочки может быть классический блок else, который выполнится только в случае, когда ни одно из условий не приведётся к true.
+
+// let cost;
+// const subscription = "premium";
+
+// if (subscription === "free") {
+//   cost = 0;
+// } else if (subscription === "pro") {
+//   cost = 100;
+// } else if (subscription === "premium") {
+//   cost = 500;
+// } else {
+//   console.log(`Invalid subscription type - ${subscription}`);
+// }
+
+// console.log(cost); // 500
+// При первом же удовлетворяющем условии проверки прекратятся и выполнится только тело соответствующего блока if. Поэтому подобную запись следует читать как: «ищу первое выполнение условия, игнорирую всё остальное».
+
+// Задание
+// Функция checkPassword(password) получает пароль пользователя в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+
+// Если значение параметра password равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+// Если значение параметра password совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+// Если ни одно из предыдущих условий не выполнилось, в переменную message записывается строка "Access denied, wrong password!".
+// Тесты
+// Объявлена функция checkPassword(password)
+// Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+// Вызов checkPassword(null) возвращает "Canceled by user!"
+// Вызов checkPassword("polyhax") возвращает "Access denied, wrong password!"
+// Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+
+  if (password === null) { 
+    message =  'Canceled by user!';
+  } else if (password === 'jqueryismyjam') { 
+    message = 'Welcome!';
+  } else {
+    message = 'Access denied, wrong password!';
+  }
+
+  return message;
+}
+
+checkPassword("mangohackzor");
+checkPassword(null);
+checkPassword("polyhax");
+checkPassword("jqueryismyjam");
 
 // Задача 20
 
