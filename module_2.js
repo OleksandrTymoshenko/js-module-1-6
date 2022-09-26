@@ -317,10 +317,10 @@ const firstElement = array[0];
 // Вызов splitMessage("Mango", "") возвращает ["M", "a", "n", "g", "o"]
 // Вызов splitMessage("best_for_week", "_") возвращает ["best", "for", "week"]
 
-function splitMessage(message, delimeter) {
+function splitMessage(message, delimiter) {
   let words;
   // Change code below this line
-words = message.split(delimeter)
+words = message.split(delimiter)
   // Change code above this line
   return words;
 }
